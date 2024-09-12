@@ -5,11 +5,15 @@ import Post from './components/post.vue';
 import rimuruImage1 from './assets/rimuru_colocando_mascara.gif';
 import rimuruImage2 from './assets/rimuru_voando_solando.gif';
 import rimuruImage3 from './assets/rimuru_fazendeiro.gif';
+import rimuruImage4 from './assets/rimuru_logo.jpg';
 </script>
 
 <template>
   <div>
-    <Cabecalho titulo="Rimuru_" name="Rimuru_"/>
+    <Cabecalho 
+    :img_cabec="rimuruImage4" 
+    titulo="Rimuru_" 
+    link="Abertura Primeira Temporada"/>
     
     <Post 
       :img_post="rimuruImage1"

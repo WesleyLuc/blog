@@ -1,4 +1,5 @@
 <script>
+    import button from './button.vue';
     export default { 
         name : "cabecalho",
         props: {
@@ -6,9 +7,16 @@
                 type: String,
                 required: true
             },
-            name: {
+            link: {
                 type: String,
                 required: true
+            },
+            img_cabec: {
+            type: String,
+            required: true
+            },
+            components: {
+            button
             }
         }
     //import imagem from "./assets/rimuru_colocando_mascara.gif"
@@ -25,8 +33,9 @@
             </div>
         </div>-->
         <div>
+            <img :src="img_cabec" alt="Imagem do Cabecalho" width="250px"/>
             <h1> {{ titulo }} </h1>
-            <span> {{ name }} </span>
+            <a href="https://www.youtube.com/watch?v=GhGTc6p8sg0"> {{ link }} </a>
         </div>
 </template>
 

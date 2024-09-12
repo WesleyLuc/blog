@@ -23,8 +23,8 @@ const props = defineProps({
 
 <template>
   <div class="post">
-    <img :src="img_post" alt="Imagem do Post" width="100%" height="auto" />
-    <h2>{{ tit_post }}</h2>
+    <img :src="img_post" alt="Imagem do Post" width="100%" height="50%" />
+    <h2 style="font: bold">{{ tit_post }}</h2>
     <p>{{ mes_post }}</p>
     <p class="autor">{{ autor_post }}</p>
   </div>
@@ -35,6 +35,8 @@ const props = defineProps({
   background-color: gainsboro;
   margin-bottom: 20px;
   padding: 20px;
+  width: auto;
+  height: auto;
 }
 .autor {
   color: black;
