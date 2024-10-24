@@ -1,26 +1,22 @@
 <script>
-    import button from './button.vue';
+    import btn from './button.vue';
     export default { 
         name : "cabecalho",
         props: {
             titulo: {
                 type: String,
-                required: true
-            },
-            link: {
-                type: String,
-                required: true
+                required: false
             },
             img_cabec: {
             type: String,
-            required: true
+            required: false
             },
-            components: {
-            button
-            }
+        },
+        components: {
+            btn
         }
+    }
     //import imagem from "./assets/rimuru_colocando_mascara.gif"
-  }
 </script>
 
 <template>
@@ -35,7 +31,8 @@
         <div>
             <img :src="img_cabec" alt="Imagem do Cabecalho" width="250px"/>
             <h1> {{ titulo }} </h1>
-            <a href="https://www.youtube.com/watch?v=GhGTc6p8sg0"> {{ link }} </a>
+            <btn txt_button="Posts" link="/"/>
+            <btn txt_button="Login" link="/login"/>
         </div>
 </template>
 
@@ -49,4 +46,11 @@ h1 {
 h2 {
   font-weight: bolder;
 }
+btn {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+  }
 </style>
