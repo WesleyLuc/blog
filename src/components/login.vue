@@ -1,21 +1,28 @@
 <script>
-import imgLogo from "@/assets/rimuru_logo.jpg"; // Importa a imagem do logo
+import imgLogo from "@/assets/rimuru_logo.jpg"; 
 
 export default {
   name: "Login",
   data() {
     return {
-      email: '',
+      usuario: '', 
       password: '',
-      imgLogo // Armazena a imagem do logo no estado do componente
+      imgLogo 
     };
   },
   methods: {
     login() {
-      console.log('E-mail:', this.email);
+      console.log('Usuário:', this.usuario);
       console.log('Senha:', this.password);
-      if (this.email === this.password) {
-        console.log("Usuário e senha são iguais.");
+      
+      if (this.usuario === 'lkdsahfl' && this.password === '123') {
+        console.log("Usuário e senha estão corretos.");
+        
+        
+        this.$emit('login', this.usuario);
+        this.$router.push('/post'); 
+      } else {
+        console.error("Usuário ou senha incorretos.");
       }
     }
   }
@@ -26,7 +33,7 @@ export default {
   <div class="login-container">
     <img :src="imgLogo" alt="Logo" class="logo" />
     <form @submit.prevent="login" class="login-form">
-      <input type="email" v-model="email" placeholder="E-mail" required />
+      <input type="text" v-model="usuario" placeholder="Usuário" required /> 
       <input type="password" v-model="password" placeholder="Senha" required />
       <button type="submit">Login</button>
     </form>
